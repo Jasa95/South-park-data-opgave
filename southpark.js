@@ -3,15 +3,19 @@
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const craig = await getCharacter("Data/craig.json");
+  const southParkers = await getCharacter(
+    "https://cederdorff.github.io/dat-js/05-data/southpark.json"
+  );
+//  southParkers.forEach(showCharacter);
 
-//   const data = getData();
-//   showAllCharacters(data);
-  showCharacter(craig);
-}
+// for of loop  
+  for (const southpark of southParkers) {
+    showCharacter(southpark)
+    
+  };
+};
 
 function showCharacter(character) {
-    console.log("test")
   document.querySelector("#characters").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
@@ -24,7 +28,7 @@ function showCharacter(character) {
             </article>
         `
   );
-  console.log(character)
+  console.log(character);
 
   document
     .querySelector("#characters article:last-child")
@@ -32,41 +36,40 @@ function showCharacter(character) {
 
   function characterClicked() {
     console.log(character);
-    document.querySelector("#dialog-box").insertAdjacentHTML(
-      "afterbegin" /*html*/,
+    document.querySelector("#dialog-content").innerHTML = "";
+    document.querySelector("#dialog-content").insertAdjacentHTML(
+      "afterbegin",
+      /*html*/ `
+
+       
+      <img src=${character.image}/>
+      <div id="div">
+        <h3>Name: ${character.name}</h3>
+        <p>Nickname: ${character.nickname}</p>
+        <p>Age: ${character.age}</p>
+        <p>Gender: ${character.gender}</p>
+        <p>Occupation: ${character.occupation}</p>
+        <p>School grade: ${character.schoolGrade}</p>
+        <p>Religion: ${character.religion}</p>
+        <p>Catchphrase ${character.catchPhrase}</p>
+        <p>Haircolor ${character.hairColor}</p>
+        <p>Appearances count ${character.appearances}</p>
+        <p>First appearance ${character.firstAppearance}</p>
+        <p>Voiced by ${character.voicedBy}</p>
+      </div>
       `
-      <img src
-    `
     );
     document.querySelector("dialog").showModal();
-  }
-}
+  };
+};
 
+function reset() {
+  document.getElementById("div").removeChild();
+};
 
 async function getCharacter(url) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(data);
   return data;
-}
-
-// function getData() {
-//   const data = [];
-//   return data;
-// }
-
-// function showAllCharacters(list) {
-//   showCharacter(character);
-// }
-
-
-// function showInfo(character) {}
-
-// function hideInfo() {}
-
-// // helper functions
-// function getDescription() {}
-
-// function formatDate(dateOfBirth) {}
-
-// function calcage(dateOfBirth) {}
+};

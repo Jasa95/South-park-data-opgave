@@ -1,16 +1,16 @@
 {
-"image": "https://static.wikia.nocookie.net/southpark/images/c/c2/Craig-tucker.png",
 "name": "Craig Tucker",
-"aliases": "Feldspar the Theif, Super Craig", 
-"age": 10,
-"gender": "Male",
+"nickname": "Feldspar the Theif, Super Craig",
+"image": "https://static.wikia.nocookie.net/southpark/images/c/c2/Craig-tucker.png",
 "occupation": "Student",
-"schoolGrade": "4th Grade",
+"age": 10,
+"voicedBy": "Matt Stone",
+"gender": "Male",
 "religion": "Roman Catholic",
-"cathphrase": "If i could ... I would be sooooo happy",
+"catchPhrase": "If i could ... I would be sooooo happy",
 "hairColor": "Black",
-"episodes": "",
-"appearances": 0,
-"firstAppearance": "Mr. Hankey, the Christmas Poo",
-"voicedBy": "Matt Stone"
+"schoolGrade": 4,
+"episodes": "null",
+"appearances": 67,
+"firstAppearance": "Mr. Hankey, the Chrismas Poo"
 }
